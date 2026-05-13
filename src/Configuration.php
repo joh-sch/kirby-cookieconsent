@@ -66,7 +66,7 @@ class Configuration
         $translations = kirby()->option('zephir.cookieconsent.translations');
         $locale = kirby()->option('zephir.cookieconsent.language.locale', 'en');
 
-        if (option('languages')) {
+        if (option('languages') && kirby()->language()) {
             $locale = kirby()->language()->code();
         }
 
@@ -81,7 +81,7 @@ class Configuration
     {
         $direction = option('zephir.cookieconsent.language.direction', 'ltr');
 
-        if (option('languages')) {
+        if (option('languages') && kirby()->language()) {
             $direction = kirby()->language()->direction();
         }
 
